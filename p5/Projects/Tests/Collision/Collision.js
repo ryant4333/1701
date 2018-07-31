@@ -1,33 +1,42 @@
-function setup() {
-  createCanvas(400,400);
-}
 
-let img;
+var img;
 let imgx = 0;
 let imgy = 0;
-let targetx = 0;
-let targety = 0;
+let destx = 0;
+let desty = 0;
+
+let targetx = 300;
+let targety = 100;
 
 function preload() {
-  img = loadImage('Poliwhirl.jpg');
+  img = loadImage('https://vignette.wikia.nocookie.net/pokemonfakemon/images/1/17/Poliwhirl_Dream.png/revision/latest?cb=20110910231534');
+}
+
+function setup() {
+  createCanvas(600,600);
 }
 
 function draw() {
   background(200);
 
-  if (y < desty) {
-    y++;
+  if (imgy < desty) {
+    imgy++;
   }
-  if (y > desty) {
-    y--;
+  if (imgy > desty) {
+    imgy--;
   }
-  if (x < destx) {
-    x++;
+  if (imgx < destx) {
+    imgx++;
   }
-  if (x > destx) {
-    x--;
+  if (imgx > destx) {
+    imgx--;
   }
-  image(img, x, y, 100, 100); 
+  imageMode(CENTER);
+  image(img, imgx, imgy, 100, 100); 
+
+  ellipse(targetx, targety, 40, 40);
+
+  text(dist(imgx, imgy, targetx, targety), 70, 70);
 
 }
 
@@ -43,5 +52,10 @@ function keyPressed() {
   }
   if (keyCode == UP_ARROW) {
     desty -= 20;
+  }
+
+  if (dist(imgx, imgy, targetx, targety) < 100) {
+    targetx = 300;
+    targety = 300;
   }
 }

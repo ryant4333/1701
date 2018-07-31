@@ -1,8 +1,7 @@
 let img;
 
 function preload() {
-  img = loadImage('Images/Liv_logo.jpg');
-  //img = loadImage('https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/170px-Liverpool_FC.svg.png');
+  img = loadImage('https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/170px-Liverpool_FC.svg.png');
 
 }
 

@@ -55,7 +55,7 @@ function keyPressed() {
   }
 
   if (dist(imgx, imgy, targetx, targety) < 100) {
-    targetx = 300;
-    targety = 300;
+    targetx = random(600);
+    targety = random(600);
   }
 }
